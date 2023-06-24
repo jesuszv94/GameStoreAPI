@@ -1,3 +1,4 @@
+using System.Net.Security;
 using GameStore.Api.Entities;
 
 const string GetGameEndpointName = "GetGame";
@@ -11,7 +12,7 @@ List<Game> games = new()
         Genre = "Fighting",
         Price = 10.99M,
         ReleaseDate = new DateTime(1991, 2, 1),
-        ImageUrl = "https://placehold.co/100",
+        ImageUrl = "https://placehold.co/100"
     },
     new Game()
     {
@@ -20,7 +21,7 @@ List<Game> games = new()
         Genre = "RolePlaying",
         Price = 59.99M,
         ReleaseDate = new DateTime(2010, 9, 30),
-        ImageUrl = "https://placehold.co/100",
+        ImageUrl = "https://placehold.co/100"
     },
     new Game()
     {
@@ -29,7 +30,16 @@ List<Game> games = new()
         Genre = "Sports",
         Price = 69.99M,
         ReleaseDate = new DateTime(2022, 9, 27),
-        ImageUrl = "https://placehold.co/100",
+        ImageUrl = "https://placehold.co/100"
+    },
+    new Game()
+    {
+        Id = 4,
+        Name = "Megaman",
+        Genre = "Adventure",
+        Price= 100.00M,
+        ReleaseDate = new DateTime(1992, 1, 1),
+        ImageUrl = "https://placehold.co/100"
     }
 };
 
@@ -78,6 +88,5 @@ app.MapDelete("/games/{id}", (int id) =>
     }
     return Results.NoContent();
 });
-
 
 app.Run();
